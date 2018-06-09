@@ -22,7 +22,7 @@
     this.itemSelector = options.item;
     this.nextSelector = options.next;
     this.paginationSelector = options.pagination;
-    this.$scrollContainer = $(options.scrollContainerOverwrite) || $element;
+    this.$scrollContainer = options.scrollContainerOverwrite || $element;
     this.$container = (window === $element.get(0) ? $(document) : $element);
     this.defaultDelay = options.delay;
     this.negativeMargin = options.negativeMargin;
