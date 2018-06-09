@@ -18,11 +18,20 @@
   var UNDETERMINED_SCROLLOFFSET = -1;
 
   var IAS = function($element, options) {
+	  var scrollOverwriteTarget = options.scrollContainerOverwrite;
+	  if(!scrollOverwriteTarget) {
+		  scrollOverwriteTarget = $element;
+	  } else if (scrollOverwriteTarget === 'window') {
+		  scrollOverwriteTarget = window;
+	  } else {
+		  scrollOverwriteTarget = $(scrollOverwriteTarget);
+	  }
+
     this.itemsContainerSelector = options.container;
     this.itemSelector = options.item;
     this.nextSelector = options.next;
     this.paginationSelector = options.pagination;
-    this.$scrollContainer = options.scrollContainerOverwrite || $element;
+    this.$scrollContainer = scrollOverwriteTarget;
     this.$container = (window === $element.get(0) ? $(document) : $element);
     this.defaultDelay = options.delay;
     this.negativeMargin = options.negativeMargin;
