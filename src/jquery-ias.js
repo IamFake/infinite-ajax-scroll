@@ -22,7 +22,7 @@
 	  if(!scrollOverwriteTarget) {
 		  scrollOverwriteTarget = $element;
 	  } else if (scrollOverwriteTarget === 'window') {
-		  scrollOverwriteTarget = window;
+		  scrollOverwriteTarget = $(window);
 	  } else {
 		  scrollOverwriteTarget = $(scrollOverwriteTarget);
 	  }
