@@ -641,7 +641,7 @@
     this.each(function() {
       var $this = $(this),
           instance = $this.data('ias'),
-          options = $.extend({}, $.fn.ias.defaults, $this.data(), typeof option == 'object' && option)
+          options = $.extend({}, $.fn.ias.defaults, $this.data(), typeof option === 'object' && option)
           ;
 
       // set a new instance as data
